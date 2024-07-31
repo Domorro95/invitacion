@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a mi fiesta de cumpleaños 30</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff69b4, #6a0dad); /* Gradiente rosa mexicano a morado */
+            color: #333;
+            overflow-x: hidden;
+        }
+        .play-button {
+            position: fixed; /* Fijo en la parte superior */
+            top: 50%; /* Centro vertical */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(50deg, #1D8EEB, #B542BC); /* Gradiente morado a rosa mexicano */
+            color: #fff;
+            padding: 20px 40px; /* Tamaño más pequeño */
+            border: none;
+            border-radius: 12px;
+            font-size: 24px; /* Texto más pequeño */
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            transition: opacity 0.3s ease; /* Transición para la desaparición */
+        }
+        .container {
+            max-width: 90%;
+            margin: 1000px auto 40px auto; /* Ajustado para móviles */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.3); /* Fondo transparente */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            border: 3px solid #ff69b4;
+        }
+        .section {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .image, .decorative-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto; /* Ajusta la altura automáticamente */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 20px; /* Texto más pequeño */
+            font-weight: bold;
+            color: #000; /* Contador en negro */
+            margin-bottom: 20px;
+        }
+        .link {
+            text-decoration: none;
+            color: #ff69b4;
+            font-weight: bold;
+            background-color: #fff0f5;
+            padding: 10px 15px; /* Tamaño más pequeño */
+            border-radius: 5px;
+            border: 2px solid #ff69b4;
+            transition: background-color 0.3s ease;
+        }
+        .link:hover {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+        .map-container {
+            width: 100%;
+            height: 200px; /* Ajustado para móviles */
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .audio-container {
+            width: 100%;
+            max-width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo negro opaco */
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .audio-container img {
+            width: 40px; /* Tamaño más pequeño */
+            height: 40px; /* Tamaño más pequeño */
+            border-radius: 50%;
+            margin-right: 10px; /* Margen más pequeño */
+        }
+        .audio-container audio {
+            width: 100%; /* Ajustado para móviles */
+            outline: none;
+        }
+        .editable-text {
+            color: #000; /* Color de texto por defecto */
+            text-align: center; /* Centrar texto */
+        }
+        h1.editable-text {
+            font-size: 32px; /* Tamaño del texto ajustado */
+            color: #000000; /* Color del texto */
+        }
+        p.editable-text {
+            font-size: 24px; /* Tamaño del texto ajustado */
+            color: #000000; /* Color del texto */
+        }
+        .address-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .address-section p {
+            font-size: 18px; /* Tamaño del texto ajustado */
+            font-weight: bold;
+        }
+        .address-section .link {
+            font-size: 18px; /* Tamaño del texto ajustado */
+            padding: 10px 15px; /* Tamaño más pequeño */
+        }
+        .survey-button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff69b4; /* Color del botón */
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: 2px solid #ff69b4;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .survey-button:hover {
+            background-color: #e55b8d; /* Color del botón al pasar el cursor */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button" id="playButton" onclick="startAudio()">EMPEZAMOS?</button>
+    <div class="container">
+        <div class="section">
+            <h1 class="editable-text">¡Te invito a mi fiesta de cumpleaños!</h1>
+            <img src="https://www.dropbox.com/scl/fi/kohadydt7m1o8nha8zo45/1.jpg?rlkey=7rz7el1q05yqco8frqnazjw4m&st=gzfvscfj&dl=1" alt="Imagen de la fiesta" class="image">
+            <div class="audio-container" id="audioContainer">
+                <img src="https://www.dropbox.com/scl/fi/8k9fyn61sr2io97jqefrb/2.jpg?rlkey=76u0z8upk1u8f5p0ncmw1phhu&st=es1tu65w&dl=1" alt="Album Art">
+                <audio id="audio" controls>
+                    <source src="https://www.dropbox.com/scl/fi/gmos4x5orecm60pltc7n7/Hoy-Es-Mi-Cumplea-os.mp3?rlkey=njtz65k6gi7m58jff0tbyznpc&st=mdj15zcy&dl=1" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            <p class="editable-text">¡Ven a celebrar conmigo!</p>
+        </div>
+        <div class="section">
+            <img src="https://www.dropbox.com/scl/fi/3gfqh824p551p96tpz9ry/4.jpg?rlkey=0im53q17mq1zvm6l3hbujl8a4&st=57pjfnx5&dl=1" alt="Decoración 1" class="decorative-image">
+            <a href="https://forms.gle/3fhXUkMnBMHsoBdCA" target="_blank" class="survey-button">Click y confirma tu asistencia</a>
+            <p class="editable-text">Los espero el día 17 de agosto a las 5:30 PM</p>
+        </div>
+        <div class="section address-section">
+            <p class="editable-text">Dirección del guateque
+		Av. Alfredo Toxqui 13, San Sebastián de Aparicio, 72219 San Sebastián de Aparicio, Pue</p>
+            <a href="https://www.google.com/maps?q=19.0988492,-98.1588613&z=17&hl=es" target="_blank" class="link">Presiona para abrir Maps</a>
+        </div>
+        <div class="section">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=19.0988492,-98.1588613&z=17&hl=es&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="section">
+            <p class="countdown">Faltan <span id="countdown">[Tiempo restante]</span> para la fiesta!</p>
+        </div>
+    </div>
+    <script>
+        function startAudio() {
+            const audio = document.getElementById("audio");
+            audio.play();
+            const playButton = document.getElementById("playButton");
+            playButton.style.opacity = '0'; // Ocultar botón
+            setTimeout(() => {
+                playButton.remove(); // Remover el botón del DOM
+                window.scrollTo({ top: document.querySelector(".container").offsetTop, behavior: 'smooth' });
+            }, 300); // Retraso para asegurar que el botón se oculte antes de hacer scroll
+        }
+
+        window.addEventListener('scroll', function() {
+            const playButton = document.getElementById("playButton");
+            if (playButton && window.scrollY === 0) {
+                playButton.style.opacity = '1'; // Mostrar botón cuando se vuelve al top
+            } else if (playButton) {
+                playButton.style.opacity = '0'; // Ocultar botón al hacer scroll
+            }
+        });
+
+        const countdown = document.getElementById("countdown");
+        const fechaFiesta = new Date("2024-08-17T17:30:00");
+
+        function updateCountdown() {
+            const ahora = new Date();
+            const diferencia = fechaFiesta - ahora;
+            if (diferencia <= 0) {
+                countdown.textContent = "¡La fiesta ya ha comenzado!";
+                return;
+            }
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            countdown.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
