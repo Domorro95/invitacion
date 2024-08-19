@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://www.dropbox.com/scl/fi/3xp8ky3le283osead4gv3/fondo.jpg?rlkey=ibtgzhh86ez2sh66sd4kdaafp&st=e8z67ai7&dl=1') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 4em;
+            margin: 10px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h6 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .event-details {
+            margin: 20px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .event-details p {
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        .audio-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .audio-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .photo-space {
+            background: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            height: auto;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-space img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #fff;
+            background: linear-gradient(90deg, #747221, #5F5300);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(50deg, #CFAF2F, #19AFB1);
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .info {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="container">
+            <h1 class="editable">&nbsp;</h1>
+            <h1 class="editable">Te invitamos a mi fiesta</h1>
+            <h1 class="editable">de</h1>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <h1 class="editable">XV AÑOS</h1>
+            <p>&nbsp;</p>
+            <h2 class="editable secondary">Yamireni Barona Jiménez</h2>
+            <p>&nbsp;</p>
+            <h6>&nbsp;Fecha: 16 de Noviembre de 2024&nbsp;</h6>
+            <h6>Hora de la Ceremonia: 18:00&nbsp;</h6>
+            <h6>Hora de la Recepción: 20:00</h6>
+            <p>&nbsp;</p>
+            <a href="https://forms.gle/3W2pLbd6iduv8gUi7" class="button" id="confirm-button">Da click para confirmar tu asistencia</a>
+
+            <div class="audio-container" id="audioContainer">
+                <img src="https://www.dropbox.com/scl/fi/dthtxov5y7pdme6137wyy/foto.jpg?rlkey=jyd26izoe26cummwzhptzgnji&st=sh8r9gtn&dl=1" alt="Album Art">
+                <audio id="audio" controls autoplay>
+                    <source src="https://www.dropbox.com/scl/fi/q161eem3ttxo3tf93hjd6/song.mp3?rlkey=sw7f4g1cbb9cirz6bz13s1265&st=jcxi0noj&dl=1" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+
+            <div class="countdown" id="countdown">
+                Faltan 113 días, 1 horas, 20 minutos y 21 segundos
+            </div>
+            
+            <h3>TE ESPERAMOS NO FALTES</h3>
+            
+            <div class="photo-space">    
+                <img src="https://www.dropbox.com/scl/fi/whug2nmnb9wrgiwby788l/ves.jpg?rlkey=tu6ttuzhyz1s92d97or56tyu5&st=ns8flt2c&dl=1" alt="Imagen de la fiesta" class="image">
+            </div>
+
+            <div class="photo-space">
+                <p class="info">Espacio para agregar otra foto.</p>
+            </div>
+
+            <div class="event-details">
+                <h3>Detalles del Evento</h3>
+                <p>Lugar de la Ceremonia:</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2666.7708542274127!2d-98.15575188956565!3d19.04686864697704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc036376a03d3%3A0xd578db45394628f7!2sSantuario%20del%20Se%C3%B1or%20de%20la%20Misericordia!5e0!3m2!1ses-419!2smx!4v1723917471366!5m2!1ses-419!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>
+                <a href="https://maps.app.goo.gl/PRGTvbDaeESCR5Mu6" target="_blank" class="button">Abrir Mapa de la Ceremonia</a>
+                
+                <p>Dirección del Salón:</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.930485074471!2d-99.13320918472895!3d19.43260758688896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92fae33f63b%3A0xefe36265de61e3b7!2sSal%C3%B3n%20Los%20Pinos!5e0!3m2!1ses!2smx!4v1723917671366!5m2!1ses!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>
+                <a href="https://maps.app.goo.gl/QR7R6JDAxAaEbvGp7" target="_blank" class="button">Abrir Mapa del Salón</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
