@@ -192,16 +192,47 @@
             <div class="event-details">
                 <h3>Detalles del Evento</h3>
                 <p>Lugar de la Ceremonia:</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2666.7708542274127!2d-98.15575188956565!3d19.04686864697704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc036376a03d3%3A0xd578db45394628f7!2sSantuario%20del%20Se%C3%B1or%20de%20la%20Misericordia!5e0!3m2!1ses-419!2smx!4v1723917471366!5m2!1ses-419!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>Av. del Maestro s/n, Unidad Satélite Magisterial, 72320 Heroica Puebla de Zaragoza, Pue.&nbsp;</p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2666.7708542274127!2d-98.15575188956565!3d19.04686864697704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc036376a03d3%3A0xd578db45394628f7!2sSantuario%20del%20Se%C3%B1or%20de%20la%20Misericordia!5e0!3m2!1ses-419!2smx!4v1723917471366!5m2!1ses-419!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <br>
                 <a href="https://maps.app.goo.gl/PRGTvbDaeESCR5Mu6" target="_blank" class="button">Abrir Mapa de la Ceremonia</a>
                 
                 <p>Dirección del Salón:</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.930485074471!2d-99.13320918472895!3d19.43260758688896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92fae33f63b%3A0xefe36265de61e3b7!2sSal%C3%B3n%20Los%20Pinos!5e0!3m2!1ses!2smx!4v1723917671366!5m2!1ses!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d280.27488819236027!2d-98.14933600558828!3d19.06750170272137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1724097306680!5m2!1ses-419!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                 <br>
-                <a href="https://maps.app.goo.gl/QR7R6JDAxAaEbvGp7" target="_blank" class="button">Abrir Mapa del Salón</a>
+                <a href="https://maps.app.goo.gl/ArTkmmBm4DJBmicN7" target="_blank" class="button">Abrir Mapa del Salón</a>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('confirm-button').addEventListener('click', function() {
+            document.getElementById('audio').play();
+        });
+
+        // Ejemplo de cuenta regresiva
+        const countdownElement = document.getElementById('countdown');
+        const eventDate = new Date('2024-11-16T18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `Faltan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownElement.innerHTML = "¡El evento ha comenzado!";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
