@@ -29,6 +29,8 @@
         h1, h2 {
             font-family: 'Great Vibes', cursive;
             font-weight: 400;
+            color: #d4af37; /* Tono dorado/champán */
+            text-shadow: 2px 2px 0 #000;
         }
 
         h1 {
@@ -37,20 +39,33 @@
         }
 
         h2 {
-            font-size: 4em;
-            margin: 10px 0;
+            font-size: 7em;
+            margin: 20px auto;
+            color: #d4af37; /* Tono dorado/champán */
+            animation: glow 2s infinite alternate;
         }
 
         h3 {
             font-size: 1.5em;
             margin: 10px 0;
+			color: #d4af37; /* Tono dorado/champán */
+            text-shadow: 2px 2px 0 #000;
             font-family: 'Roboto', sans-serif;
         }
 
         h6 {
             font-family: 'Great Vibes', cursive;
-            font-size: 2em;
-            margin: 10px 0;
+            font-size: 2em;color: #d4af37; /* Tono dorado/champán */
+            text-shadow: 2px 2px 0 #000;
+			margin: 200px 0;
+        }
+		@keyframes glow {
+            from {
+                text-shadow: 0 0 50px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37, 0 0 30px #d4af37;
+            }
+            to {
+                text-shadow: 0 0 300px #c5b358, 0 0 30px #c5b358, 0 0 60px #c5b358, 0 0 70px #c5b358;
+            }
         }
 
         .countdown {
@@ -106,6 +121,14 @@
             position: relative;
             overflow: hidden;
         }
+		.photo-between img {
+            width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			animation: glow 2s infinite alternate;
+            
+        }
 
         .photo-space img {
             width: 100%;
@@ -146,11 +169,83 @@
             border: none;
             border-radius: 10px;
             margin-top: 10px;
+			
         }
+		
+
+        /* Efecto de luces en movimiento */
+        .lights {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .light {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 2);
+            filter: blur(50px);
+            border-radius: 50%;
+            animation: move 10s infinite alternate;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(50vh) translateX(50vw);
+            }
+        }
+		.butterflies {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 100%;
+            z-index: 0; /* Asegúrate de que las mariposas estén detrás del contenedor */
+            overflow: hidden;
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.dropbox.com/scl/fi/yfxx4zk9pp1vfpbclhbvz/butterfly-5707_256.gif?rlkey=vuldgtzzd73lrw2yas09xu2b6&st=br5kn1gv&dl=1') no-repeat center center;
+            background-size: contain;
+            animation: fly 10s infinite;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-200px) translateX(200px);
+            }
+            100% {
+                transform: translateY(0) translateX(400px);
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="parallax">
+	<div class="lights">
+        <div class="light" style="top: 10%; left: 20%;"></div>
+        <div class="light" style="top: 30%; left: 50%;"></div>
+        <div class="light" style="top: 50%; left: 80%;"></div>
+        <div class="light" style="top: 70%; left: 40%;"></div>		
+	<div class="butterflies">
+        <div class="butterfly" style="top: 100%; left: 5%; animation-duration: 12s;"></div>
+        <div class="butterfly" style="top: 110%; left: 15%; animation-duration: 14s;"></div>
+        <div class="butterfly" style="top: 130%; left: 30%; animation-duration: 16s;"></div>
+        <!-- Agrega más mariposas aquí si es necesario -->
+    </div>
         <div class="container">
             <h1 class="editable">&nbsp;</h1>
             <h1 class="editable">Te invitamos a mi fiesta</h1>
@@ -159,11 +254,15 @@
             <p>&nbsp;</p>
             <h1 class="editable">XV AÑOS</h1>
             <p>&nbsp;</p>
-            <h2 class="editable secondary">Yamireni Barona Jiménez</h2>
+          <p>&nbsp;</p>
+<div class="photo-between">
+      <img src="https://www.dropbox.com/scl/fi/dyf8tt54viu818d1tq9ge/cor.png?rlkey=p8c7ts7dpvlkvk8snhn7xvixm&st=7j9hfw95&dl=1" alt="Foto entre XV AÑOS y Yamireni">
+      </div>
+            <h2 class="editable secondary">Yamireni</h2>
             <p>&nbsp;</p>
             <h6>&nbsp;Fecha: 16 de Noviembre de 2024&nbsp;</h6>
-            <h6>Hora de la Ceremonia: 18:00&nbsp;</h6>
-            <h6>Hora de la Recepción: 20:00</h6>
+            <h6>Hora de la Ceremonia: 04:00 pm</h6>
+            <h6>Hora de la Recepción: 05:30 pm</h6>
             <p>&nbsp;</p>
             <a href="https://forms.gle/3W2pLbd6iduv8gUi7" target="_blank" class="button" id="confirm-button">Da click para confirmar tu asistencia</a>
 
@@ -176,7 +275,7 @@
             </div>
 
             <div class="countdown" id="countdown">
-                Faltan 113 días, 1 horas, 20 minutos y 21 segundos
+                
             </div>
             
             <h3>TE ESPERAMOS NO FALTES</h3>
@@ -186,7 +285,7 @@
             </div>
 
             <div class="photo-space">
-                <p class="info">Espacio para agregar otra foto.</p>
+                <p class="info">.</p>
             </div>
 
             <div class="event-details">
